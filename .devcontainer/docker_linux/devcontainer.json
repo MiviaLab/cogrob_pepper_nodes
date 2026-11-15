@@ -1,0 +1,50 @@
+{
+    "name": "Linux Development Container",
+    "privileged": true,
+    "remoteUser": "mivia",
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "args": {
+        }
+    },
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "customizations": {
+        "vscode": {
+            "extensions":[
+                "ms-azuretools.vscode-docker",
+                "ms-python.vscode-pylance",
+                "ms-python.python",
+                "mhutchie.git-graph",
+                "oderwat.indent-rainbow",
+                "mintlify.document",
+                "tal7aouy.rainbow-bracket",
+                "mechatroner.rainbow-csv",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.live-server",
+            ]
+        }
+    },
+    "containerEnv": {
+        "DISPLAY": "${localEnv:DISPLAY}",
+        //Configure your github token to use LLM API
+        "GITHUB_TOKEN": ""
+    },
+    "runArgs": [
+        "--net=host",
+        "--volume=/dev:/dev",
+        "-e", "XAUTHORITY=/tmp/.Xauthority",
+        "-v", "${localEnv:HOME}/.Xauthority:/tmp/.Xauthority",
+        "--device=/dev/snd",
+        "--device=/dev/bus/usb",
+        "--ipc=host",
+        //"--device=/dev/ttyUSB0",
+        
+        // Uncomment row below to enable GPU support
+        //"--gpus=all",
+    ],
+    "mounts": [
+    ],
+    "postCreateCommand": "echo 'source /workspace/ws/install/setup.bash' >> /home/mivia/.bashrc",
+    "overrideCommand": true
+}
