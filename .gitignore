@@ -1,0 +1,10 @@
+.idea
+devel
+build
+logs
+.catkin_tools
+*.pyc
+log
+install
+yolo*
+.vscode/
