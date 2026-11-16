@@ -1,0 +1,20 @@
+/**:
+  ros__parameters:
+    # "classic"    -> closed-set detector (YOLO, fixed COCO classes)
+    # "open_vocab" -> open-vocabulary detector (YOLOE, classes given as text)
+    detector_type: "open_vocab"
+
+    # Weights used for each detector type
+    classic_model: "yolo11n.pt"
+    open_vocab_model: "yoloe-11s-seg.pt"
+
+    # Confidence threshold
+    conf: 0.25
+
+    # Default text prompts for the open-vocabulary detector
+    # (used when the service request does not specify any class,
+    #  and for the images streamed on /in_rgb).
+    # Can be changed at runtime with:
+    #   ros2 param set /object_detector_node classes "['cup', 'keys']"
+    # Ignored (no filtering) by the classic detector.
+    classes: ["person", "bus", "sneakers"]

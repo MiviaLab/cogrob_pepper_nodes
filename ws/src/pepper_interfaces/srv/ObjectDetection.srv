@@ -1,3 +1,10 @@
+# Image to analyse
 sensor_msgs/Image image
+# Classes to look for (optional).
+#  - open-vocabulary detector: free-text prompts (e.g. "red mug", "keys").
+#    If empty, the default classes from the node configuration are used.
+#  - classic detector: optional filter on its fixed label set (e.g. COCO).
+#    If empty, all the classes are returned. Unknown names are ignored.
+string[] classes
 ---
 pepper_interfaces/Detection[] detections

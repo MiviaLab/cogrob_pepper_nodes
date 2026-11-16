@@ -10,6 +10,10 @@
   <depend>sensor_msgs</depend>
   <depend>pepper_interfaces</depend>
   <depend>std_msgs</depend>
+  <depend>rcl_interfaces</depend>
+  <depend>cv_bridge</depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
