@@ -24,6 +24,7 @@ setup(
             "tablet_example=examples.tablet_example:main",
             "tts_example=examples.tts_example:main",
             "wakeup_example=examples.wakeup_example:main",
+            "asr_example=examples.asr_example:main",
             
         ],
     },
